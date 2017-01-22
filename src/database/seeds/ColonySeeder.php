@@ -1,5 +1,5 @@
 <?php
-
+namespace CleaniqueCoders\Colonies\Database\Seeds;
 use Clenaiquecoders\Colonies\Models\District;
 use Clenaiquecoders\Colonies\Models\State;
 use Clenaiquecoders\Colonies\Models\SubDistrict;

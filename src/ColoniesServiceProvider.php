@@ -1,6 +1,6 @@
 <?php
 
-namespace Clenaiquecoders\Colonies;
+namespace CleaniqueCoders\Colonies;
 
 use Illuminate\Support\ServiceProvider;
 
