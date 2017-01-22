@@ -1,0 +1,19 @@
+{
+    "name": "cleaniquecoders/colonies",
+    "description": "States, Distrcts and SubDistricts in Malyaisia - Built with Laravel Standalone Package Creator.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nasrul Hazim",
+            "email": "nasrulhazim.m@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "CleaniqueCoders\\Colonies\\": "src/"
+        }
+    },
+    "require": {
+        
+    }
+}
