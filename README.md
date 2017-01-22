@@ -18,6 +18,7 @@ Migrate the schemas and seed the data
 
 ```
 php artisan migrate --seed
+php artisan db:seed --class=CleaniqueCoders\Colonies\Database\Seeds\ColonySeeder
 ```
 
 ## License
