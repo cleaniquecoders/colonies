@@ -17,7 +17,7 @@ Open up `config/app.php` and register `CleaniqueCoders\Colonies\ColoniesServiceP
 Migrate the schemas and seed the data
 
 ```
-php artisan migrate --seed
+php artisan migrate
 php artisan db:seed --class=CleaniqueCoders\Colonies\Database\Seeds\ColonySeeder
 ```
 
