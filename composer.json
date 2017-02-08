@@ -9,6 +9,9 @@
         }
     ],
     "autoload": {
+        "classmap": [
+            "src/database"
+        ],
         "psr-4": {
             "CleaniqueCoders\\Colonies\\": "src/"
         }
