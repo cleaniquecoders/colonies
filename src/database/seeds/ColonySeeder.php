@@ -1,8 +1,10 @@
 <?php
-namespace CleaniqueCoders\Colonies\Database\Seeds;
-use Clenaiquecoders\Colonies\Models\District;
-use Clenaiquecoders\Colonies\Models\State;
-use Clenaiquecoders\Colonies\Models\SubDistrict;
+
+use CleaniqueCoders\Colonies\Models\District;
+use CleaniqueCoders\Colonies\Models\Dun;
+use CleaniqueCoders\Colonies\Models\Parliament;
+use CleaniqueCoders\Colonies\Models\State;
+use CleaniqueCoders\Colonies\Models\SubDistrict;
 use Illuminate\Database\Seeder;
 
 class ColonySeeder extends Seeder
@@ -17,6 +19,8 @@ class ColonySeeder extends Seeder
         State::truncate();
         District::truncate();
         SubDistrict::truncate();
+        Parliament::truncate();
+        Dun::truncate();
 
         $colonies = json_decode(file_get_contents(__DIR__ . '/colony.json'));
 
@@ -30,6 +34,30 @@ class ColonySeeder extends Seeder
             ]);
             $this->command->info('State: ' . $state->name);
 
+            // handle parliament and duns
+            if (!empty($colony->parliaments)) {
+                foreach ($colony->parliaments as $parliament) {
+                    $p = Parliament::create([
+                        'state_id' => $state->id,
+                        'name' => $parliament->name,
+                        'code' => $parliament->code,
+                    ]);
+
+                    if (!empty($parliament->duns)) {
+                        foreach ($parliament->duns as $dun) {
+                            $d = Dun::create([
+                                'parliament_id' => $p->id,
+                                'state_id' => $state->id,
+                                'name' => $dun->name,
+                                'code' => $dun->code,
+                            ]);
+                            $this->command->info('DUN: ' . $dun->name);
+                        }
+                    }
+                }
+            }
+
+            // handle districts and sub-districts
             if (!empty($colony->districts)) {
                 foreach ($colony->districts as $district) {
                     $dist = District::create([
