@@ -16,11 +16,11 @@ class District extends Model
 
     public function state()
     {
-        return $this->belongsTo('Cleaniquecoders\Colonies\Models\State');
+        return $this->belongsTo('CleaniqueCoders\Colonies\Models\State');
     }
 
     public function subdistricts()
     {
-        return $this->hasMany('Cleaniquecoders\Colonies\Models\SubDistrict');
+        return $this->hasMany('CleaniqueCoders\Colonies\Models\SubDistrict');
     }
 }

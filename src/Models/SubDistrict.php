@@ -16,6 +16,6 @@ class SubDistrict extends Model
 
     public function district()
     {
-        return $this->belongsTo('Cleaniquecoders\Colonies\Models\District');
+        return $this->belongsTo('CleaniqueCoders\Colonies\Models\District');
     }
 }
